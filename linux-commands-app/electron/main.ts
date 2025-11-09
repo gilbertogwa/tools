@@ -1,6 +1,13 @@
 import { app, BrowserWindow, Tray, Menu, nativeImage } from 'electron';
 import * as path from 'path';
 
+// Extend Electron.App to include custom property
+declare module 'electron' {
+  interface App {
+    isQuitting?: boolean;
+  }
+}
+
 let mainWindow: BrowserWindow | null = null;
 let tray: Tray | null = null;
 
