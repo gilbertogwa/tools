@@ -1,0 +1,232 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+/* Header */
+.app-header {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--accent-primary);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  animation: slideDown 0.5s ease-out;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.title-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.5));
+}
+
+.title-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--accent-primary);
+  margin-left: var(--spacing-md);
+}
+
+.app-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Controls Section */
+.controls-section {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  padding: var(--spacing-xl);
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Categories Container */
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+/* Category Section */
+.category-section {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.category-section:hover {
+  border-color: var(--border-color-light);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.category-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.category-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.3));
+}
+
+.category-count {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 20px;
+  margin-left: auto;
+}
+
+/* Commands Grid */
+.commands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  margin-top: var(--spacing-xl);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.no-results-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.5;
+}
+
+.no-results h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.no-results p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Footer */
+.app-footer {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-top: var(--spacing-xl);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .commands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .commands-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .title-icon {
+    font-size: 2.5rem;
+  }
+
+  .title-subtitle {
+    font-size: 1rem;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-header,
+  .controls-section,
+  .app-main,
+  .app-footer {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+
+  .app-title {
+    font-size: 1.5rem;
+    gap: var(--spacing-sm);
+  }
+
+  .title-icon {
+    font-size: 2rem;
+  }
+
+  .title-subtitle {
+    font-size: 0.9rem;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .category-title {
+    font-size: 1.3rem;
+    flex-wrap: wrap;
+  }
+
+  .category-count {
+    margin-left: 0;
+  }
+}
