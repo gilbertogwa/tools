@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { commandsData, CommandCategory, Command } from './data/commands';
+import { commandsData } from './data/commands';
 import CommandCard from './components/CommandCard';
 import SearchBar from './components/SearchBar';
 import CategoryFilter from './components/CategoryFilter';
