@@ -2000,4 +2000,528 @@ export const commandsData: CommandCategory[] = [
       },
     ],
   },
+  {
+    id: 'vi',
+    title: 'Editor Vi',
+    icon: '📄',
+    commands: [
+      {
+        command: 'vi arquivo.txt',
+        description: 'Abre arquivo no Vi',
+      },
+      {
+        command: 'vi +10 arquivo.txt',
+        description: 'Abre arquivo na linha 10',
+      },
+      {
+        command: 'i',
+        description: 'Modo INSERT (inserir texto)',
+      },
+      {
+        command: 'ESC',
+        description: 'Volta para modo COMANDO',
+      },
+      {
+        command: ':w',
+        description: 'Salva arquivo',
+      },
+      {
+        command: ':q',
+        description: 'Sai do Vi',
+      },
+      {
+        command: ':wq',
+        description: 'Salva e sai',
+      },
+      {
+        command: ':q!',
+        description: 'Sai sem salvar (força)',
+      },
+      {
+        command: ':w novo.txt',
+        description: 'Salva como novo arquivo',
+      },
+      {
+        command: 'x',
+        description: 'Deleta caractere',
+      },
+      {
+        command: 'dd',
+        description: 'Deleta linha inteira',
+      },
+      {
+        command: '5dd',
+        description: 'Deleta 5 linhas',
+      },
+      {
+        command: 'yy',
+        description: 'Copia linha',
+      },
+      {
+        command: '5yy',
+        description: 'Copia 5 linhas',
+      },
+      {
+        command: 'p',
+        description: 'Cola após cursor',
+      },
+      {
+        command: 'P',
+        description: 'Cola antes do cursor',
+      },
+      {
+        command: 'u',
+        description: 'Desfazer (undo)',
+      },
+      {
+        command: '/texto',
+        description: 'Busca "texto" para frente',
+      },
+      {
+        command: '?texto',
+        description: 'Busca "texto" para trás',
+      },
+      {
+        command: 'n',
+        description: 'Próxima ocorrência da busca',
+      },
+      {
+        command: 'N',
+        description: 'Ocorrência anterior da busca',
+      },
+      {
+        command: ':s/antigo/novo/',
+        description: 'Substitui na linha atual',
+      },
+      {
+        command: ':%s/antigo/novo/g',
+        description: 'Substitui em todo arquivo',
+      },
+      {
+        command: 'gg',
+        description: 'Vai para primeira linha',
+      },
+      {
+        command: 'G',
+        description: 'Vai para última linha',
+      },
+      {
+        command: ':50',
+        description: 'Vai para linha 50',
+      },
+      {
+        command: '0',
+        description: 'Início da linha',
+      },
+      {
+        command: '$',
+        description: 'Fim da linha',
+      },
+      {
+        command: 'A',
+        description: 'Modo INSERT no fim da linha',
+      },
+      {
+        command: 'o',
+        description: 'Insere linha abaixo',
+      },
+      {
+        command: 'O',
+        description: 'Insere linha acima',
+      },
+    ],
+  },
+  {
+    id: 'vim',
+    title: 'Editor Vim',
+    icon: '✏️',
+    commands: [
+      {
+        command: 'vim arquivo.txt',
+        description: 'Abre arquivo no Vim',
+      },
+      {
+        command: 'vim +10 arquivo.txt',
+        description: 'Abre arquivo na linha 10',
+      },
+      {
+        command: 'vim -o arquivo1 arquivo2',
+        description: 'Abre múltiplos arquivos (split horizontal)',
+      },
+      {
+        command: 'vim -O arquivo1 arquivo2',
+        description: 'Abre múltiplos arquivos (split vertical)',
+      },
+      {
+        command: 'vim -d arquivo1 arquivo2',
+        description: 'Modo diff (comparação)',
+      },
+      {
+        command: ':e arquivo.txt',
+        description: 'Abre arquivo para edição',
+      },
+      {
+        command: ':e!',
+        description: 'Recarrega arquivo descartando mudanças',
+      },
+      {
+        command: ':w',
+        description: 'Salva arquivo',
+      },
+      {
+        command: ':wq ou :x',
+        description: 'Salva e sai',
+      },
+      {
+        command: ':q!',
+        description: 'Sai sem salvar',
+      },
+      {
+        command: ':saveas novo.txt',
+        description: 'Salva como novo arquivo',
+      },
+      {
+        command: 'i',
+        description: 'Modo INSERT antes do cursor',
+      },
+      {
+        command: 'a',
+        description: 'Modo INSERT depois do cursor',
+      },
+      {
+        command: 'I',
+        description: 'INSERT no início da linha',
+      },
+      {
+        command: 'A',
+        description: 'INSERT no fim da linha',
+      },
+      {
+        command: 'o',
+        description: 'Nova linha abaixo',
+      },
+      {
+        command: 'O',
+        description: 'Nova linha acima',
+      },
+      {
+        command: 'ESC',
+        description: 'Volta para modo NORMAL',
+      },
+      {
+        command: 'v',
+        description: 'Modo VISUAL (seleção)',
+      },
+      {
+        command: 'V',
+        description: 'Modo VISUAL LINE (linhas inteiras)',
+      },
+      {
+        command: 'Ctrl+v',
+        description: 'Modo VISUAL BLOCK (blocos)',
+      },
+      {
+        command: 'x',
+        description: 'Deleta caractere',
+      },
+      {
+        command: 'dd',
+        description: 'Deleta linha',
+      },
+      {
+        command: 'dw',
+        description: 'Deleta palavra',
+      },
+      {
+        command: 'd$',
+        description: 'Deleta até fim da linha',
+      },
+      {
+        command: 'D',
+        description: 'Deleta até fim da linha (atalho)',
+      },
+      {
+        command: 'yy',
+        description: 'Copia linha',
+      },
+      {
+        command: 'yw',
+        description: 'Copia palavra',
+      },
+      {
+        command: 'y$',
+        description: 'Copia até fim da linha',
+      },
+      {
+        command: 'p',
+        description: 'Cola após cursor/linha',
+      },
+      {
+        command: 'P',
+        description: 'Cola antes do cursor/linha',
+      },
+      {
+        command: 'u',
+        description: 'Desfazer (undo)',
+      },
+      {
+        command: 'Ctrl+r',
+        description: 'Refazer (redo)',
+      },
+      {
+        command: '.',
+        description: 'Repete último comando',
+      },
+      {
+        command: '/texto',
+        description: 'Busca "texto"',
+      },
+      {
+        command: 'n',
+        description: 'Próxima ocorrência',
+      },
+      {
+        command: 'N',
+        description: 'Ocorrência anterior',
+      },
+      {
+        command: ':s/antigo/novo/',
+        description: 'Substitui na linha atual',
+      },
+      {
+        command: ':%s/antigo/novo/g',
+        description: 'Substitui em todo arquivo',
+      },
+      {
+        command: ':%s/antigo/novo/gc',
+        description: 'Substitui com confirmação',
+      },
+      {
+        command: 'gg',
+        description: 'Primeira linha',
+      },
+      {
+        command: 'G',
+        description: 'Última linha',
+      },
+      {
+        command: ':50',
+        description: 'Vai para linha 50',
+      },
+      {
+        command: '0',
+        description: 'Início da linha',
+      },
+      {
+        command: '$',
+        description: 'Fim da linha',
+      },
+      {
+        command: 'w',
+        description: 'Próxima palavra',
+      },
+      {
+        command: 'b',
+        description: 'Palavra anterior',
+      },
+      {
+        command: 'Ctrl+f',
+        description: 'Página abaixo',
+      },
+      {
+        command: 'Ctrl+b',
+        description: 'Página acima',
+      },
+      {
+        command: ':split',
+        description: 'Divide janela horizontalmente',
+      },
+      {
+        command: ':vsplit',
+        description: 'Divide janela verticalmente',
+      },
+      {
+        command: 'Ctrl+w w',
+        description: 'Alterna entre janelas',
+      },
+      {
+        command: 'Ctrl+w q',
+        description: 'Fecha janela atual',
+      },
+      {
+        command: ':tabnew',
+        description: 'Nova aba',
+      },
+      {
+        command: 'gt',
+        description: 'Próxima aba',
+      },
+      {
+        command: 'gT',
+        description: 'Aba anterior',
+      },
+      {
+        command: ':set number',
+        description: 'Mostra números de linha',
+      },
+      {
+        command: ':set nonumber',
+        description: 'Oculta números de linha',
+      },
+      {
+        command: ':set paste',
+        description: 'Modo paste (para colar código)',
+      },
+      {
+        command: ':syntax on',
+        description: 'Ativa syntax highlighting',
+      },
+      {
+        command: ':set hlsearch',
+        description: 'Destaca resultados da busca',
+      },
+      {
+        command: ':noh',
+        description: 'Remove destaque da busca',
+      },
+      {
+        command: ':help',
+        description: 'Abre ajuda do Vim',
+      },
+      {
+        command: 'vimtutor',
+        description: 'Tutorial interativo (terminal)',
+      },
+    ],
+  },
+  {
+    id: 'cat',
+    title: 'Cat - Visualizar e Criar Arquivos',
+    icon: '🐱',
+    commands: [
+      {
+        command: 'cat arquivo.txt',
+        description: 'Exibe conteúdo do arquivo',
+      },
+      {
+        command: 'cat arquivo1.txt arquivo2.txt',
+        description: 'Exibe múltiplos arquivos',
+      },
+      {
+        command: 'cat -n arquivo.txt',
+        description: 'Exibe com números de linha',
+      },
+      {
+        command: 'cat -b arquivo.txt',
+        description: 'Numera apenas linhas não vazias',
+      },
+      {
+        command: 'cat -s arquivo.txt',
+        description: 'Remove linhas vazias consecutivas',
+      },
+      {
+        command: 'cat -A arquivo.txt',
+        description: 'Mostra todos caracteres especiais',
+      },
+      {
+        command: 'cat -T arquivo.txt',
+        description: 'Mostra tabs como ^I',
+      },
+      {
+        command: 'cat -E arquivo.txt',
+        description: 'Mostra fim de linha como $',
+      },
+      {
+        command: 'cat > arquivo.txt',
+        description: 'Cria arquivo (digite texto e Ctrl+D para salvar)',
+        example: 'Digite linhas de texto, pressione Enter para nova linha, Ctrl+D quando terminar',
+      },
+      {
+        command: 'cat >> arquivo.txt',
+        description: 'Adiciona ao final do arquivo',
+        example: 'Mesmo que acima, mas preserva conteúdo existente',
+      },
+      {
+        command: 'cat << EOF > arquivo.txt',
+        description: 'Cria arquivo com heredoc (múltiplas linhas)',
+        example: 'Digite texto, finalize com EOF em nova linha',
+      },
+      {
+        command: 'cat << \'EOF\' > script.sh\n#!/bin/bash\necho "Hello"\nEOF',
+        description: 'Cria script com heredoc',
+      },
+      {
+        command: 'cat arquivo1.txt arquivo2.txt > combinado.txt',
+        description: 'Concatena arquivos em um novo',
+      },
+      {
+        command: 'cat arquivo.txt | grep "texto"',
+        description: 'Busca texto no arquivo',
+      },
+      {
+        command: 'cat arquivo.txt | less',
+        description: 'Visualiza com paginação',
+      },
+      {
+        command: 'cat arquivo.txt | head -20',
+        description: 'Primeiras 20 linhas',
+      },
+      {
+        command: 'cat arquivo.txt | tail -20',
+        description: 'Últimas 20 linhas',
+      },
+      {
+        command: 'cat arquivo.txt | wc -l',
+        description: 'Conta linhas do arquivo',
+      },
+      {
+        command: 'cat arquivo.txt | sort',
+        description: 'Ordena linhas',
+      },
+      {
+        command: 'cat arquivo.txt | uniq',
+        description: 'Remove linhas duplicadas adjacentes',
+      },
+      {
+        command: 'cat /dev/null > arquivo.txt',
+        description: 'Esvazia arquivo mantendo-o',
+      },
+      {
+        command: 'cat /etc/passwd',
+        description: 'Visualiza usuários do sistema',
+      },
+      {
+        command: 'cat /etc/hosts',
+        description: 'Visualiza mapeamento de hosts',
+      },
+      {
+        command: 'cat /proc/cpuinfo',
+        description: 'Informações da CPU',
+      },
+      {
+        command: 'cat /proc/meminfo',
+        description: 'Informações de memória',
+      },
+      {
+        command: 'tac arquivo.txt',
+        description: 'Exibe arquivo invertido (última linha primeiro)',
+      },
+      {
+        command: 'zcat arquivo.txt.gz',
+        description: 'Visualiza arquivo compactado (.gz)',
+      },
+      {
+        command: 'cat - arquivo.txt',
+        description: 'Lê stdin e depois arquivo',
+      },
+      {
+        command: 'cat arquivo.txt | tr "a-z" "A-Z"',
+        description: 'Converte para maiúsculas',
+      },
+      {
+        command: 'cat arquivo.txt | nl',
+        description: 'Numera linhas (alternativa)',
+      },
+    ],
+  },
 ];

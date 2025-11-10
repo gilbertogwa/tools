@@ -15,11 +15,14 @@
     "package": "npm run build && npm run build:electron"
   },
   "dependencies": {
+    "crypto-js": "^4.2.0",
+    "electron-store": "^11.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/node": "^20.10.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
@@ -44,7 +47,9 @@
       "assets/**/*"
     ],
     "win": {
-      "target": ["nsis"],
+      "target": [
+        "nsis"
+      ],
       "icon": "assets/icon.ico"
     }
   }
