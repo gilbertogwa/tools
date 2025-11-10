@@ -1041,6 +1041,606 @@ export const commandsData: CommandCategory[] = [
     ],
   },
   {
+    id: 'disk',
+    title: 'Verificação de Discos',
+    icon: '💾',
+    commands: [
+      {
+        command: 'df -h',
+        description: 'Espaço em disco (formato legível)',
+      },
+      {
+        command: 'df -h /',
+        description: 'Espaço em disco da raiz',
+      },
+      {
+        command: 'df -h /home',
+        description: 'Espaço em disco do /home',
+      },
+      {
+        command: 'df -i',
+        description: 'Uso de inodes',
+      },
+      {
+        command: 'df -T',
+        description: 'Mostra tipo do sistema de arquivos',
+      },
+      {
+        command: 'du -sh *',
+        description: 'Tamanho de cada item no diretório atual',
+      },
+      {
+        command: 'du -sh pasta/',
+        description: 'Tamanho total de uma pasta',
+      },
+      {
+        command: 'du -h --max-depth=1',
+        description: 'Tamanho de subpastas (1 nível)',
+      },
+      {
+        command: 'du -h --max-depth=2 | sort -h',
+        description: 'Tamanho ordenado (2 níveis)',
+      },
+      {
+        command: 'du -sh * | sort -h',
+        description: 'Ordenado por tamanho (legível)',
+      },
+      {
+        command: 'du -sh * | sort -hr | head -10',
+        description: '10 maiores itens',
+      },
+      {
+        command: 'ncdu',
+        description: 'Analisador interativo de disco (precisa instalar)',
+      },
+      {
+        command: 'ncdu /var',
+        description: 'Analisa diretório específico',
+      },
+      {
+        command: 'lsblk',
+        description: 'Lista dispositivos de bloco',
+      },
+      {
+        command: 'lsblk -f',
+        description: 'Lista com sistema de arquivos',
+      },
+      {
+        command: 'fdisk -l',
+        description: 'Lista partições de disco',
+      },
+      {
+        command: 'parted -l',
+        description: 'Info de partições (alternativa)',
+      },
+      {
+        command: 'blkid',
+        description: 'UUID e tipo de partições',
+      },
+      {
+        command: 'mount | column -t',
+        description: 'Sistemas de arquivos montados',
+      },
+      {
+        command: 'findmnt',
+        description: 'Árvore de pontos de montagem',
+      },
+      {
+        command: 'find / -type f -size +100M',
+        description: 'Arquivos maiores que 100MB',
+      },
+      {
+        command: 'find / -type f -size +1G',
+        description: 'Arquivos maiores que 1GB',
+      },
+      {
+        command: 'find /var -type f -size +50M -exec ls -lh {} \\;',
+        description: 'Busca e lista arquivos grandes',
+      },
+      {
+        command: 'iostat -x',
+        description: 'Estatísticas de I/O de disco',
+      },
+      {
+        command: 'iotop',
+        description: 'Monitor de I/O por processo',
+      },
+    ],
+  },
+  {
+    id: 'logs',
+    title: 'Logs do Sistema',
+    icon: '📋',
+    commands: [
+      {
+        command: 'journalctl',
+        description: 'Visualiza logs do systemd',
+      },
+      {
+        command: 'journalctl -xe',
+        description: 'Últimos logs com explicações',
+      },
+      {
+        command: 'journalctl -f',
+        description: 'Logs em tempo real',
+      },
+      {
+        command: 'journalctl -u nginx',
+        description: 'Logs de serviço específico',
+      },
+      {
+        command: 'journalctl -u nginx -f',
+        description: 'Logs de serviço em tempo real',
+      },
+      {
+        command: 'journalctl --since "1 hour ago"',
+        description: 'Logs da última hora',
+      },
+      {
+        command: 'journalctl --since "2024-01-01"',
+        description: 'Logs desde data específica',
+      },
+      {
+        command: 'journalctl --since today',
+        description: 'Logs de hoje',
+      },
+      {
+        command: 'journalctl --since yesterday',
+        description: 'Logs de ontem',
+      },
+      {
+        command: 'journalctl -p err',
+        description: 'Apenas erros',
+      },
+      {
+        command: 'journalctl -p warning',
+        description: 'Warnings e acima',
+      },
+      {
+        command: 'journalctl -b',
+        description: 'Logs do boot atual',
+      },
+      {
+        command: 'journalctl -b -1',
+        description: 'Logs do boot anterior',
+      },
+      {
+        command: 'journalctl --disk-usage',
+        description: 'Espaço usado pelos logs',
+      },
+      {
+        command: 'journalctl --vacuum-time=7d',
+        description: 'Remove logs com mais de 7 dias',
+      },
+      {
+        command: 'journalctl --vacuum-size=500M',
+        description: 'Limita logs a 500MB',
+      },
+      {
+        command: 'tail -f /var/log/syslog',
+        description: 'Logs do sistema (Ubuntu)',
+      },
+      {
+        command: 'tail -f /var/log/messages',
+        description: 'Logs do sistema (CentOS/RHEL)',
+      },
+      {
+        command: 'tail -f /var/log/auth.log',
+        description: 'Logs de autenticação (Ubuntu)',
+      },
+      {
+        command: 'tail -f /var/log/secure',
+        description: 'Logs de autenticação (CentOS/RHEL)',
+      },
+      {
+        command: 'tail -f /var/log/kern.log',
+        description: 'Logs do kernel',
+      },
+      {
+        command: 'tail -f /var/log/apache2/error.log',
+        description: 'Erros do Apache (Ubuntu)',
+      },
+      {
+        command: 'tail -f /var/log/httpd/error_log',
+        description: 'Erros do Apache (CentOS/RHEL)',
+      },
+      {
+        command: 'tail -f /var/log/nginx/error.log',
+        description: 'Erros do Nginx',
+      },
+      {
+        command: 'tail -f /var/log/nginx/access.log',
+        description: 'Acessos do Nginx',
+      },
+      {
+        command: 'tail -n 100 /var/log/syslog',
+        description: 'Últimas 100 linhas',
+      },
+      {
+        command: 'grep -i "error" /var/log/syslog',
+        description: 'Busca erros no syslog',
+      },
+      {
+        command: 'grep -i "failed" /var/log/auth.log',
+        description: 'Tentativas de login falhadas',
+      },
+      {
+        command: 'grep "$(date +%Y-%m-%d)" /var/log/syslog',
+        description: 'Logs de hoje',
+      },
+      {
+        command: 'zgrep "error" /var/log/syslog.1.gz',
+        description: 'Busca em logs compactados',
+      },
+      {
+        command: 'dmesg',
+        description: 'Mensagens do kernel (buffer)',
+      },
+      {
+        command: 'dmesg -T',
+        description: 'Mensagens com timestamp legível',
+      },
+      {
+        command: 'dmesg -w',
+        description: 'Monitora mensagens do kernel',
+      },
+      {
+        command: 'dmesg | grep -i error',
+        description: 'Erros do kernel',
+      },
+      {
+        command: 'dmesg | grep -i usb',
+        description: 'Mensagens relacionadas a USB',
+      },
+      {
+        command: 'last',
+        description: 'Histórico de logins',
+      },
+      {
+        command: 'last -n 20',
+        description: 'Últimos 20 logins',
+      },
+      {
+        command: 'lastb',
+        description: 'Tentativas de login falhadas',
+      },
+      {
+        command: 'lastlog',
+        description: 'Último login de cada usuário',
+      },
+      {
+        command: 'cat /var/log/fail2ban/fail2ban.log',
+        description: 'Logs do Fail2ban',
+      },
+      {
+        command: 'logrotate -f /etc/logrotate.conf',
+        description: 'Força rotação de logs',
+      },
+    ],
+  },
+  {
+    id: 'services',
+    title: 'Serviços e Processos',
+    icon: '⚙️',
+    commands: [
+      {
+        command: 'systemctl list-units --type=service',
+        description: 'Lista todos serviços',
+      },
+      {
+        command: 'systemctl list-units --type=service --state=running',
+        description: 'Serviços em execução',
+      },
+      {
+        command: 'systemctl list-units --type=service --state=failed',
+        description: 'Serviços com falha',
+      },
+      {
+        command: 'systemctl status servico',
+        description: 'Status de serviço',
+      },
+      {
+        command: 'systemctl start servico',
+        description: 'Inicia serviço',
+      },
+      {
+        command: 'systemctl stop servico',
+        description: 'Para serviço',
+      },
+      {
+        command: 'systemctl restart servico',
+        description: 'Reinicia serviço',
+      },
+      {
+        command: 'systemctl reload servico',
+        description: 'Recarrega configuração (sem reiniciar)',
+      },
+      {
+        command: 'systemctl enable servico',
+        description: 'Habilita serviço no boot',
+      },
+      {
+        command: 'systemctl disable servico',
+        description: 'Desabilita serviço no boot',
+      },
+      {
+        command: 'systemctl is-active servico',
+        description: 'Verifica se está ativo',
+      },
+      {
+        command: 'systemctl is-enabled servico',
+        description: 'Verifica se está habilitado',
+      },
+      {
+        command: 'systemctl mask servico',
+        description: 'Bloqueia serviço (não pode iniciar)',
+      },
+      {
+        command: 'systemctl unmask servico',
+        description: 'Desbloqueia serviço',
+      },
+      {
+        command: 'systemctl daemon-reload',
+        description: 'Recarrega arquivos de serviço',
+      },
+      {
+        command: 'systemctl list-dependencies servico',
+        description: 'Dependências do serviço',
+      },
+      {
+        command: 'systemctl cat servico',
+        description: 'Mostra arquivo de configuração',
+      },
+      {
+        command: 'systemctl edit servico',
+        description: 'Edita configuração do serviço',
+      },
+      {
+        command: 'ps aux',
+        description: 'Lista todos processos',
+      },
+      {
+        command: 'ps aux | grep nginx',
+        description: 'Busca processo específico',
+      },
+      {
+        command: 'ps -ef',
+        description: 'Lista processos (formato estendido)',
+      },
+      {
+        command: 'ps -eLf',
+        description: 'Lista processos com threads',
+      },
+      {
+        command: 'ps -u usuario',
+        description: 'Processos de um usuário',
+      },
+      {
+        command: 'pgrep nginx',
+        description: 'PID de processos por nome',
+      },
+      {
+        command: 'pgrep -u usuario',
+        description: 'PIDs de processos do usuário',
+      },
+      {
+        command: 'pidof nginx',
+        description: 'PID do processo',
+      },
+      {
+        command: 'top',
+        description: 'Monitor interativo de processos',
+      },
+      {
+        command: 'htop',
+        description: 'Monitor melhorado (precisa instalar)',
+      },
+      {
+        command: 'top -u usuario',
+        description: 'Processos de um usuário',
+      },
+      {
+        command: 'kill PID',
+        description: 'Mata processo (SIGTERM)',
+      },
+      {
+        command: 'kill -9 PID',
+        description: 'Força encerramento (SIGKILL)',
+      },
+      {
+        command: 'kill -15 PID',
+        description: 'Encerramento gracioso (SIGTERM)',
+      },
+      {
+        command: 'killall nome_processo',
+        description: 'Mata todos com esse nome',
+      },
+      {
+        command: 'pkill nginx',
+        description: 'Mata processos por nome',
+      },
+      {
+        command: 'pkill -u usuario',
+        description: 'Mata processos do usuário',
+      },
+      {
+        command: 'nice -n 10 comando',
+        description: 'Executa com baixa prioridade',
+      },
+      {
+        command: 'renice -n 5 -p PID',
+        description: 'Altera prioridade de processo',
+      },
+      {
+        command: 'bg',
+        description: 'Continua processo em background',
+      },
+      {
+        command: 'fg',
+        description: 'Traz processo para foreground',
+      },
+      {
+        command: 'jobs',
+        description: 'Lista jobs em background',
+      },
+      {
+        command: 'nohup comando &',
+        description: 'Executa ignorando HUP (logout)',
+      },
+      {
+        command: 'service --status-all',
+        description: 'Status de todos serviços (SysV)',
+      },
+      {
+        command: 'service nginx status',
+        description: 'Status serviço (SysV)',
+      },
+      {
+        command: 'service nginx start',
+        description: 'Inicia serviço (SysV)',
+      },
+    ],
+  },
+  {
+    id: 'cron',
+    title: 'Agendamento (Cron)',
+    icon: '⏰',
+    commands: [
+      {
+        command: 'crontab -l',
+        description: 'Lista tarefas agendadas do usuário',
+      },
+      {
+        command: 'crontab -e',
+        description: 'Edita crontab do usuário',
+      },
+      {
+        command: 'crontab -r',
+        description: 'Remove crontab do usuário',
+      },
+      {
+        command: 'crontab -u usuario -l',
+        description: 'Lista crontab de outro usuário',
+      },
+      {
+        command: 'crontab -u usuario -e',
+        description: 'Edita crontab de outro usuário',
+      },
+      {
+        command: 'cat /etc/crontab',
+        description: 'Crontab do sistema',
+      },
+      {
+        command: 'ls -la /etc/cron.d/',
+        description: 'Cron jobs em /etc/cron.d',
+      },
+      {
+        command: 'ls -la /etc/cron.daily/',
+        description: 'Scripts executados diariamente',
+      },
+      {
+        command: 'ls -la /etc/cron.hourly/',
+        description: 'Scripts executados de hora em hora',
+      },
+      {
+        command: 'ls -la /etc/cron.weekly/',
+        description: 'Scripts executados semanalmente',
+      },
+      {
+        command: 'ls -la /etc/cron.monthly/',
+        description: 'Scripts executados mensalmente',
+      },
+      {
+        command: 'cat /var/spool/cron/crontabs/usuario',
+        description: 'Crontab do usuário (arquivo direto)',
+      },
+      {
+        command: 'systemctl status cron',
+        description: 'Status do serviço cron (Ubuntu)',
+      },
+      {
+        command: 'systemctl status crond',
+        description: 'Status do serviço cron (CentOS/RHEL)',
+      },
+      {
+        command: 'systemctl restart cron',
+        description: 'Reinicia serviço cron',
+      },
+      {
+        command: 'grep CRON /var/log/syslog',
+        description: 'Logs de execução cron (Ubuntu)',
+      },
+      {
+        command: 'grep CRON /var/log/cron',
+        description: 'Logs de execução cron (CentOS/RHEL)',
+      },
+      {
+        command: 'tail -f /var/log/syslog | grep CRON',
+        description: 'Monitora execuções cron (Ubuntu)',
+      },
+      {
+        command: 'tail -f /var/log/cron',
+        description: 'Monitora execuções cron (CentOS/RHEL)',
+      },
+      {
+        command: '* * * * * comando',
+        description: 'Formato: minuto hora dia mês dia_semana',
+      },
+      {
+        command: '0 2 * * * /script.sh',
+        description: 'Executa às 2h da manhã todos os dias',
+      },
+      {
+        command: '*/5 * * * * /script.sh',
+        description: 'Executa a cada 5 minutos',
+      },
+      {
+        command: '0 */2 * * * /script.sh',
+        description: 'Executa a cada 2 horas',
+      },
+      {
+        command: '0 0 * * 0 /script.sh',
+        description: 'Executa aos domingos à meia-noite',
+      },
+      {
+        command: '0 0 1 * * /script.sh',
+        description: 'Executa no dia 1 de cada mês',
+      },
+      {
+        command: '@reboot /script.sh',
+        description: 'Executa no boot',
+      },
+      {
+        command: '@daily /script.sh',
+        description: 'Executa diariamente (0h)',
+      },
+      {
+        command: '@hourly /script.sh',
+        description: 'Executa a cada hora',
+      },
+      {
+        command: '@weekly /script.sh',
+        description: 'Executa semanalmente',
+      },
+      {
+        command: '@monthly /script.sh',
+        description: 'Executa mensalmente',
+      },
+      {
+        command: 'run-parts /etc/cron.daily',
+        description: 'Executa scripts de uma pasta',
+      },
+      {
+        command: 'anacron -T',
+        description: 'Testa sintaxe do anacrontab',
+      },
+      {
+        command: 'cat /etc/anacrontab',
+        description: 'Configuração do anacron',
+      },
+    ],
+  },
+  {
     id: 'git',
     title: 'Git',
     icon: '🔀',

@@ -1,15 +1,9 @@
 import { app, BrowserWindow, Tray, Menu, nativeImage } from 'electron';
 import * as path from 'path';
 
-// Extend Electron.App to include custom property
-declare module 'electron' {
-  interface App {
-    isQuitting?: boolean;
-  }
-}
-
 let mainWindow: BrowserWindow | null = null;
 let tray: Tray | null = null;
+let isQuitting = false;
 
 const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
 
@@ -43,7 +37,7 @@ function createWindow() {
 
   // Minimizar para system tray ao invés de fechar
   mainWindow.on('close', (event) => {
-    if (!app.isQuitting) {
+    if (!isQuitting) {
       event.preventDefault();
       mainWindow?.hide();
     }
@@ -83,7 +77,7 @@ function createTray() {
     {
       label: 'Sair',
       click: () => {
-        app.isQuitting = true;
+        isQuitting = true;
         app.quit();
       }
     }
@@ -123,5 +117,5 @@ app.on('window-all-closed', () => {
 });
 
 app.on('before-quit', () => {
-  app.isQuitting = true;
+  isQuitting = true;
 });
